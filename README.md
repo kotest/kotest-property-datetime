@@ -16,4 +16,5 @@ Please create issues on the main kotest [board](https://github.com/kotest/kotest
 
 ### 1.0.0
 
+* Updated datetime version to 0.3.1
 * Migrated from the main Kotest repo to a standalone repo.
