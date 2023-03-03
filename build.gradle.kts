@@ -15,7 +15,7 @@ plugins {
    `java-library`
    signing
    `maven-publish`
-   id("org.jetbrains.dokka") version Libs.dokkaVersion
+   id("org.jetbrains.dokka") version 1.8.10
    kotlin("multiplatform").version(Libs.kotlinVersion)
 }
 
