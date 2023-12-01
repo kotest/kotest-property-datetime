@@ -12,6 +12,6 @@ object Libs {
    }
 
    object Kotlinx {
-      const val kotlintime = "org.jetbrains.kotlinx:kotlinx-datetime:0.3.1"
+      const val kotlintime = "org.jetbrains.kotlinx:kotlinx-datetime:0.5.0"
    }
 }
