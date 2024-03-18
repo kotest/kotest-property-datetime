@@ -1,21 +1,7 @@
-buildscript {
-   repositories {
-      mavenCentral()
-      maven {
-         url = uri("https://oss.sonatype.org/content/repositories/snapshots/")
-      }
-      maven {
-         url = uri("https://plugins.gradle.org/m2/")
-      }
-   }
-}
-
 plugins {
-   java
    `java-library`
    signing
    `maven-publish`
-   id("org.jetbrains.dokka") version Libs.dokkaVersion
    kotlin("multiplatform").version(Libs.kotlinVersion)
 }
 
@@ -31,25 +17,20 @@ group = Libs.org
 version = Ci.version
 
 kotlin {
-
-   targets {
-
-      jvm {
-         compilations.all {
-            kotlinOptions {
-               jvmTarget = "1.8"
-            }
+   jvm {
+      compilations.all {
+         kotlinOptions {
+            jvmTarget = "1.8"
          }
-      }
-
-      js {
-         browser()
-         nodejs()
       }
    }
 
-   sourceSets {
+   js(IR) {
+      browser()
+      nodejs()
+   }
 
+   sourceSets {
       val commonMain by getting {
          dependencies {
             api(Libs.Kotest.property)
@@ -57,21 +38,17 @@ kotlin {
          }
       }
 
-      val jvmMain by getting {
-         dependsOn(commonMain)
-      }
-
       val jvmTest by getting {
-         dependsOn(jvmMain)
          dependencies {
             implementation(Libs.Kotest.junit5)
-
          }
       }
 
       all {
-         languageSettings.useExperimentalAnnotation("kotlin.time.ExperimentalTime")
-         languageSettings.useExperimentalAnnotation("kotlin.experimental.ExperimentalTypeInference")
+         languageSettings.apply {
+            optIn("kotlin.time.ExperimentalTime")
+            optIn("kotlin.experimental.ExperimentalTypeInference")
+         }
       }
    }
 }
