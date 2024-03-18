@@ -2,6 +2,7 @@ plugins {
    `java-library`
    signing
    `maven-publish`
+   id("kotest-publishing-conventions")
    kotlin("multiplatform").version(Libs.kotlinVersion)
 }
 
@@ -68,5 +69,3 @@ tasks.named<Test>("jvmTest") {
       exceptionFormat = org.gradle.api.tasks.testing.logging.TestExceptionFormat.FULL
    }
 }
-
-apply("./publish-mpp.gradle.kts")
