@@ -4,10 +4,12 @@ object Libs {
    const val org = "io.kotest.extensions"
 
    object Kotest {
-      private const val version = "5.8.1"
+      const val version = "5.8.1"
       const val api = "io.kotest:kotest-framework-api:$version"
       const val property = "io.kotest:kotest-property:$version"
       const val junit5 = "io.kotest:kotest-runner-junit5:$version"
+      const val frameworkEngine = "io.kotest:kotest-framework-engine:$version"
+      const val assertionsCore = "io.kotest:kotest-assertions-core:$version"
    }
 
    object Kotlinx {

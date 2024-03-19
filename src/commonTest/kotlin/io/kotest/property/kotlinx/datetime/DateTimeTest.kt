@@ -20,9 +20,9 @@ class DateTimeTest : FunSpec() {
          Arb.datetime().samples().take(10000).map { it.value.second }.toSet().shouldHaveSize(60)
       }
       test("Arb.datetime should respect year range") {
-         forAll(Arb.datetime(1980..1988)) { date ->
-            date.year in 1980..1988
-         }
+          forAll(Arb.datetime(1980..1988)) { date ->
+              date.year in 1980..1988
+          }
       }
    }
 }

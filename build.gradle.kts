@@ -4,6 +4,7 @@ plugins {
    `maven-publish`
    id("kotest-publishing-conventions")
    kotlin("multiplatform").version(Libs.kotlinVersion)
+   id("io.kotest.multiplatform") version Libs.Kotest.version
 }
 
 repositories {
@@ -26,16 +27,53 @@ kotlin {
       }
    }
 
-   js(IR) {
+   js {
       browser()
       nodejs()
    }
+
+   // Requires Kotest 5.9 which is not available yet
+   // wasmJs {
+   //    browser()
+   //    nodejs()
+   // }
+
+   // Native targets
+   linuxX64()
+   linuxArm64()
+
+   mingwX64()
+
+   macosX64()
+   macosArm64()
+
+   tvosX64()
+   tvosArm64()
+   tvosSimulatorArm64()
+
+   watchosArm32()
+   watchosArm64()
+   watchosX64()
+   watchosSimulatorArm64()
+
+   iosX64()
+   iosArm64()
+   iosSimulatorArm64()
 
    sourceSets {
       val commonMain by getting {
          dependencies {
             api(Libs.Kotest.property)
             implementation(Libs.Kotlinx.kotlintime)
+         }
+      }
+
+      val commonTest by getting {
+         dependencies {
+            implementation(Libs.Kotest.assertionsCore)
+            implementation(Libs.Kotest.frameworkEngine)
+            implementation(kotlin("test-common"))
+            implementation(kotlin("test-annotations-common"))
          }
       }
 

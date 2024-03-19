@@ -7,9 +7,9 @@ import io.kotest.property.forAll
 class InstantTest : FunSpec() {
    init {
       test("Arb.instant should respect range") {
-         forAll(Arb.instant(10000L..20000L)) {
-            it.toEpochMilliseconds() in 10000..20000
-         }
+          forAll(Arb.instant(10000L..20000L)) {
+              it.toEpochMilliseconds() in 10000..20000
+          }
       }
    }
 }

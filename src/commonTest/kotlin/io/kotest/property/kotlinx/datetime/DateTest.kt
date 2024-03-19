@@ -11,9 +11,9 @@ class DateTest : FunSpec() {
          Arb.date().samples().take(1000000).map { it.value.dayOfYear }.toSet().shouldHaveSize(365)
       }
       test("Arb.date should respect year range") {
-         forAll(Arb.date(1980..1988)) { date ->
-            date.year in 1980..1988
-         }
+          forAll(Arb.date(1980..1988)) { date ->
+              date.year in 1980..1988
+          }
       }
    }
 }
