@@ -53,23 +53,23 @@ publishing {
       }
    }
 
-   publications {
-      register("mavenJava", MavenPublication::class) {
-         from(components["java"])
+   publications.withType<MavenPublication>().forEach {
+      it.apply {
+         //if (Ci.isRelease)
          pom {
-            name.set("kotest-property-datetime")
-            description.set("Kotest datetime arbiters for property testing")
-            url.set("http://www.github.com/kotest/kotest-property-datetime")
+            name.set("Kotest")
+            description.set("Kotlin Test Framework")
+            url.set("https://github.com/kotest/kotest")
 
             scm {
-               connection.set("scm:git:http://www.github.com/kotest/kotest-property-datetime")
-               developerConnection.set("scm:git:http://github.com/sksamuel/")
-               url.set("http://www.github.com/kotest/kotest-property-datetime")
+               connection.set("scm:git:https://github.com/kotest/kotest/")
+               developerConnection.set("scm:git:https://github.com/sksamuel/")
+               url.set("https://github.com/kotest/kotest/")
             }
 
             licenses {
                license {
-                  name.set("The Apache 2.0 License")
+                  name.set("Apache-2.0")
                   url.set("https://opensource.org/licenses/Apache-2.0")
                }
             }
