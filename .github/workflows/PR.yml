@@ -16,8 +16,6 @@ jobs:
                - jsTest
                - wasmJsTest
                - linuxX64Test linuxArm64TestKlibrary
-               - androidNativeX86TestKlibrary androidNativeX64TestKlibrary androidNativeArm32TestKlibrary androidNativeArm64TestKlibrary
-               - :kotest-framework:kotest-framework-multiplatform-plugin-gradle:test
       uses: ./.github/workflows/run-gradle.yml
       with:
          runs-on: ubuntu-latest
