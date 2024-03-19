@@ -32,7 +32,6 @@ jobs:
                - publishKotlinMultiplatformPublicationToDeployRepository
                - publishJvmPublicationToDeployRepository
                - publishJsPublicationToDeployRepository
-               - publishKotestBomPublicationToDeployRepository
                - publishLinuxX64PublicationToDeployRepository
                - publishLinuxArm64PublicationToDeployRepository
       steps:
