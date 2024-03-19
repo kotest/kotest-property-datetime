@@ -39,6 +39,11 @@ kotlin {
    // }
 
    // Native targets
+   androidNativeX86()
+   androidNativeX64()
+   androidNativeArm32()
+   androidNativeArm64()
+
    linuxX64()
    linuxArm64()
 
