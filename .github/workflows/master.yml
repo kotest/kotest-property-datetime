@@ -17,7 +17,7 @@ permissions:
 jobs:
    linux:
       runs-on: ubuntu-latest
-      if: github.repository == 'kotest/kotest'
+      if: github.repository == 'kotest/kotest-property-datetime'
       strategy:
          fail-fast: false
          matrix:
@@ -37,7 +37,7 @@ jobs:
 
    mac:
       runs-on: macos-latest
-      if: github.repository == 'kotest/kotest'
+      if: github.repository == 'kotest/kotest-property-datetime'
       strategy:
          fail-fast: false
          matrix:
@@ -62,7 +62,7 @@ jobs:
 
    windows:
       runs-on: windows-latest
-      if: github.repository == 'kotest/kotest'
+      if: github.repository == 'kotest/kotest-property-datetime'
       steps:
          -  uses: kotest/kotest-action@master
             with:
