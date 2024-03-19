@@ -1,7 +1,4 @@
 plugins {
-   `java-library`
-   signing
-   `maven-publish`
    id("kotest-publishing-conventions")
    kotlin("multiplatform").version(Libs.kotlinVersion)
    id("io.kotest.multiplatform") version Libs.Kotest.version

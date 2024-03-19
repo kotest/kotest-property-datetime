@@ -53,33 +53,31 @@ publishing {
       }
    }
 
-   publications.withType<MavenPublication>().forEach {
-      it.apply {
-         //if (Ci.isRelease)
-         pom {
-            name.set("Kotest")
-            description.set("Kotlin Test Framework")
-            url.set("https://github.com/kotest/kotest")
+   publications.withType<MavenPublication>().configureEach {
+      //if (Ci.isRelease)
+      pom {
+         name.set("kotest-property-datetime")
+         description.set("Kotest property testing generators for kotlinx-datetime")
+         url.set("https://github.com/kotest/kotest-property-datetime")
 
-            scm {
-               connection.set("scm:git:https://github.com/kotest/kotest/")
-               developerConnection.set("scm:git:https://github.com/sksamuel/")
-               url.set("https://github.com/kotest/kotest/")
+         scm {
+            connection.set("scm:git:https://github.com/kotest/kotest-property-datetime/")
+            developerConnection.set("scm:git:https://github.com/sksamuel/")
+            url.set("https://github.com/kotest/kotest-property-datetime/")
+         }
+
+         licenses {
+            license {
+               name.set("Apache-2.0")
+               url.set("https://opensource.org/licenses/Apache-2.0")
             }
+         }
 
-            licenses {
-               license {
-                  name.set("Apache-2.0")
-                  url.set("https://opensource.org/licenses/Apache-2.0")
-               }
-            }
-
-            developers {
-               developer {
-                  id.set("sksamuel")
-                  name.set("Stephen Samuel")
-                  email.set("sam@sksamuel.com")
-               }
+         developers {
+            developer {
+               id.set("sksamuel")
+               name.set("Stephen Samuel")
+               email.set("sam@sksamuel.com")
             }
          }
       }
