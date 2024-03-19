@@ -6,13 +6,16 @@ See [docs](https://kotest.io/docs/proptest/property-based-testing.html).
 
 Please create issues on the main kotest [board](https://github.com/kotest/kotest/issues).
 
-[![Build Status](https://github.com/kotest/kotest-property-datetime/workflows/master/badge.svg)](https://github.com/kotest/kotest-property-datetime/actions)
-[<img src="https://img.shields.io/maven-central/v/io.kotest.extensions/kotest-property-datetime.svg?label=latest%20release"/>](http://search.maven.org/#search|ga|1|kotest-property-datetime)
+[![master](https://github.com/kotest/kotest-property-datetime/actions/workflows/master.yml/badge.svg)](https://github.com/kotest/kotest-property-datetime/actions/workflows/master.yml)
 ![GitHub](https://img.shields.io/github/license/kotest/kotest-property-datetime)
 [![kotest @ kotlinlang.slack.com](https://img.shields.io/static/v1?label=kotlinlang&message=kotest&color=blue&logo=slack)](https://kotlinlang.slack.com/archives/CT0G9SD7Z)
-[<img src="https://img.shields.io/nexus/s/https/oss.sonatype.org/io.kotest.extensions/kotest-property-datetime.svg?label=latest%20snapshot"/>](https://oss.sonatype.org/content/repositories/snapshots/io/kotest/extensions/kotest-property-datetime/)
+![Sonatype Nexus (Snapshots)](https://img.shields.io/nexus/s/io.kotest.extensions/kotest-property-datetime?server=https%3A%2F%2Fs01.oss.sonatype.org&label=latest%20snapshot)
 
 ## Changelog
+
+### 2.0.0
+* Updated to Kotlin 1.9
+* Updated to Kotest 5.8.1
 
 ### 1.1.0
 
