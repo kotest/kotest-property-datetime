@@ -35,7 +35,6 @@ signing {
 }
 
 java {
-   withJavadocJar()
    withSourcesJar()
 }
 
@@ -64,7 +63,6 @@ publishing {
    }
 
    publications.withType<MavenPublication>().configureEach {
-      //if (Ci.isRelease)
       // Add javadoc so Maven Central will accept the publication
       artifact(javadocJar)
 
