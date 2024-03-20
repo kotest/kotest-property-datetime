@@ -39,6 +39,16 @@ java {
    withSourcesJar()
 }
 
+val javadoc = tasks.named("javadoc")
+
+val javadocJar by tasks.creating(Jar::class) {
+   group = JavaBasePlugin.DOCUMENTATION_GROUP
+   description = "Assembles java doc to jar"
+   archiveClassifier.set("javadoc")
+   from(javadoc)
+}
+
+
 publishing {
    repositories {
       maven {
@@ -55,6 +65,9 @@ publishing {
 
    publications.withType<MavenPublication>().configureEach {
       //if (Ci.isRelease)
+      // Add javadoc so Maven Central will accept the publication
+      artifact(javadocJar)
+
       pom {
          name.set("kotest-property-datetime")
          description.set("Kotest property testing generators for kotlinx-datetime")
