@@ -1,5 +1,7 @@
 # kotest-property-datetime
 
+**Migrated to the main Kotest repo**
+
 Kotest property arbs for kotlinx.datetime
 
 See [docs](https://kotest.io/docs/proptest/property-based-testing.html).
